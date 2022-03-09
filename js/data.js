@@ -144,8 +144,12 @@ for (i = 0; i < arrIcon.length; i++){
 	}
 }
 
+for (let i = 0; i < arrTypeIcon.length; i++){
+	selectType.innerHTML += `<option value="${arrTypeIcon[i]}">${arrTypeIcon[i]}</option>`
+}
+
 for(let i = 0; i < arrIcon.length; i++) {
-	containerIcon.innerHTML += `<i class="${arrIcon[i].family} ${arrIcon[i].prefix}${arrIcon[i].name}" style="color: ${arrIcon[i].color}"></i>`
+	containerIcon.innerHTML += `<div class="icon-box"><i class="${arrIcon[i].family} ${arrIcon[i].prefix}${arrIcon[i].name}" style="color: ${arrIcon[i].color}"></i></div>`
 };
 
 selectType.addEventListener('change', typeSwitch)
@@ -154,19 +158,19 @@ function typeSwitch() {
 	containerIcon.innerHTML = ''
 	if(selectType.value == 'animal') {
 		for (let i in iconAnimal) {
-			containerIcon.innerHTML += `<i class="${iconAnimal[i].family} ${iconAnimal[i].prefix}${iconAnimal[i].name}" style="color: ${iconAnimal[i].color}"></i>`
+			containerIcon.innerHTML += `<div class="icon-box"><i class="${iconAnimal[i].family} ${iconAnimal[i].prefix}${iconAnimal[i].name}" style="color: ${iconAnimal[i].color}"></i></div>`
 		}
 	} else if (selectType.value == 'vegetable') {
 		for (let i in iconVegetable) {
-			containerIcon.innerHTML += `<i class="${iconVegetable[i].family} ${iconVegetable[i].prefix}${iconVegetable[i].name}" style="color: ${iconVegetable[i].color}"></i>`
+			containerIcon.innerHTML += `<div class="icon-box"><i class="${iconVegetable[i].family} ${iconVegetable[i].prefix}${iconVegetable[i].name}" style="color: ${iconVegetable[i].color}"></i></div>`
 		}
 	} else if(selectType.value == 'user') {
 		for (let i in iconUser) {
-			containerIcon.innerHTML += `<i class="${iconUser[i].family} ${iconUser[i].prefix}${iconUser[i].name}" style="color: ${iconUser[i].color}"></i>`
+			containerIcon.innerHTML += `<div class="icon-box"><i class="${iconUser[i].family} ${iconUser[i].prefix}${iconUser[i].name}" style="color: ${iconUser[i].color}"></i></div>`
 		}
 	} else {
 		for(let i = 0; i < arrIcon.length; i++) {
-			containerIcon.innerHTML += `<i class="${arrIcon[i].family} ${arrIcon[i].prefix}${arrIcon[i].name}" style="color: ${arrIcon[i].color}"></i>`
+			containerIcon.innerHTML += `<div class="icon-box"><i class="${arrIcon[i].family} ${arrIcon[i].prefix}${arrIcon[i].name}" style="color: ${arrIcon[i].color}"></i></div>`
 		};
 	}
 }
